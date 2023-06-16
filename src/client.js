@@ -1,12 +1,14 @@
-import sanityClient from "@sanity/client";
-import imageUrlBuilder from "@sanity/image-url";
+import sanityClient from '@sanity/client';
+import imageUrlBuilder from '@sanity/image-url';
 
 export const client = sanityClient({
-  projectId: import.meta.env.VITE_SANITY_PROJECT_ID,
-  dataset: "production",
-  apiVersion: "2023-02-04",
+  projectId: process.env.VITE_SANITY_PROJECT_ID,
+  // projectId: import.meta.env.VITE_SANITY_PROJECT_ID,
+  dataset: 'production',
+  apiVersion: '2023-02-04',
   useCdn: true,
-  token: import.meta.env.VITE_SANITY_PROJECT_TOKEN,
+  token: process.env.VITE_SANITY_PROJECT_TOKEN,
+  // token: import.meta.env.VITE_SANITY_PROJECT_TOKEN,
 });
 
 const builder = imageUrlBuilder(client);
