@@ -1,0 +1,105 @@
+@use "../../../styles/mixins.scss" as mixins;
+
+.contact__form {
+  padding: 4rem;
+  border-radius: 0.6rem;
+  background-color: var(--light-navy);
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  grid-column: 2 / -1;
+  grid-row: 2 / 3;
+
+  @include mixins.respond(tablet) {
+    grid-column: 1 / -1;
+    grid-row: 3 / 4;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    outline: none;
+    background: none;
+    border: 0;
+    padding: 1rem;
+    border-bottom: 1px solid var(--slate);
+    font-size: 1.6rem;
+    font-family: var(--font-inter);
+    color: var(--slate);
+
+    &::placeholder {
+      color: var(--slate);
+    }
+  }
+
+  button {
+    margin-top: 2rem;
+    align-self: flex-end;
+    background-color: var(--light-navy);
+    border: 1px solid var(--slate);
+    color: var(--slate);
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      border: 1px solid var(--green);
+      color: var(--green);
+    }
+  }
+}
+
+.sending {
+  border: 1px solid var(--green) !important;
+  color: var(--green) !important;
+  background-color: rgba(100, 255, 219, 0.1) !important;
+}
+
+.contact__form-control {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  &:has(textarea) .contact__form-error {
+    top: 2rem;
+  }
+}
+
+.contact__form-error {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+
+  span {
+    color: var(--green);
+    font-size: 1.2rem;
+  }
+
+  svg {
+    width: 2rem;
+    height: auto;
+    color: var(--green);
+  }
+}
+
+.contact__form-submitted {
+  margin-top: 1rem;
+  color: var(--green);
+  font-family: var(--font-fira-mono);
+  font-size: 1.4rem;
+
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+
+  svg {
+    width: 2.6rem;
+    height: auto;
+  }
+}

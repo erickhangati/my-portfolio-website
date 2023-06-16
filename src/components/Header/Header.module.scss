@@ -1,0 +1,25 @@
+.header {
+  width: 100%;
+  padding: 2.8rem 5%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  svg {
+    height: 4.4rem;
+    width: auto;
+  }
+
+  &.scrolled {
+    padding: 1.6rem 5%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    background-color: rgba(10, 25, 47, 0.85);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+}

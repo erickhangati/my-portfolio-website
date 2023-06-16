@@ -1,0 +1,16 @@
+.button {
+  padding: 1rem 2rem;
+  font-family: var(--font-fira-mono);
+  font-size: 1.3rem;
+  color: var(--green);
+  background-color: var(--navy);
+  border: 1px solid var(--green);
+  border-radius: 0.4rem;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba(100, 255, 219, 0.1);
+  }
+}

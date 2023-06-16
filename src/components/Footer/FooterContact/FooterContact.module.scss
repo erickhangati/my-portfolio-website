@@ -1,0 +1,38 @@
+@use "../../../styles/mixins.scss" as mixins;
+
+.footer-contact {
+  position: fixed;
+  bottom: 0;
+  right: 5%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+
+  @include mixins.respond(tablet-sm) {
+    display: none;
+  }
+
+  a {
+    color: var(--white);
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      color: var(--green);
+    }
+  }
+
+  p {
+    font-family: var(--font-fira-mono);
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+    writing-mode: vertical-rl;
+  }
+}
+
+.footer-contact__hr {
+  width: 1px;
+  height: 9rem;
+  border-left: 1px solid var(--white);
+}

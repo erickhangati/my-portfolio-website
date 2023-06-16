@@ -1,0 +1,14 @@
+@use "../../../styles/mixins.scss" as mixins;
+
+.mobile-menu {
+  display: none;
+
+  @include mixins.respond(tablet) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.mobile-menu__icon {
+  color: var(--green);
+}

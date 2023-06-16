@@ -1,0 +1,58 @@
+@use "../../../styles/mixins.scss" as mixins;
+
+.desktop-menu {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+
+  @include mixins.respond(laptop) {
+    gap: 2rem;
+  }
+
+  @include mixins.respond(tablet) {
+    display: none;
+  }
+}
+
+.desktop-menu__menu {
+  font-family: var(--font-fira-mono);
+  font-size: 1.3rem;
+
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+
+  @include mixins.respond(laptop) {
+    gap: 2rem;
+  }
+
+  li {
+    cursor: pointer;
+    padding: 1rem;
+
+    &:focus {
+      border: 1px dashed var(--green);
+    }
+
+    a {
+      color: var(--green);
+    }
+
+    &:hover span {
+      color: var(--green);
+    }
+  }
+
+  span {
+    color: var(--white);
+    transition: all 0.3s ease-in-out;
+
+    &.about {
+      color: var(--green);
+    }
+
+    &.experience {
+      color: var(--green);
+    }
+  }
+}

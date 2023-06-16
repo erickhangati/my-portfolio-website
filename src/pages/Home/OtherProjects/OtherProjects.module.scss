@@ -1,0 +1,63 @@
+@use "../../../styles/mixins.scss" as mixins;
+
+.other-projects {
+  padding: 7.5rem 14%;
+
+  @include mixins.respond(tablet) {
+    padding: 6.5rem 14%;
+  }
+
+  @include mixins.respond(phone) {
+    padding: 5rem 10%;
+  }
+}
+
+.other-projects__heading {
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+
+  h2 {
+    font-family: var(--font-inter);
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--lightest-slate);
+
+    @include mixins.respond(phone) {
+      font-size: 2.4rem;
+    }
+  }
+
+  h3 {
+    font-family: var(--font-fira-mono);
+    color: var(--green);
+    font-size: 1.4rem;
+    display: inline-block;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid transparent;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      border-bottom: 1px solid var(--green);
+    }
+  }
+}
+
+.other-projects__cards {
+  margin-top: 6rem;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+
+  @include mixins.respond(laptop) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include mixins.respond(tablet-sm) {
+    grid-template-columns: 1fr;
+  }
+}

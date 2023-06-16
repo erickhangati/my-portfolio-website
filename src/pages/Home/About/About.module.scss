@@ -1,0 +1,127 @@
+@use "../../../styles/mixins.scss" as mixins;
+
+.about {
+  padding: 7.5rem 17%;
+
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  column-gap: 5rem;
+  row-gap: 6rem;
+
+  @include mixins.respond(tablet) {
+    padding: 4rem 13.5%;
+    grid-template-columns: 1fr;
+  }
+
+  @include mixins.respond(phone) {
+    padding: 4rem 8%;
+  }
+}
+
+.about__description {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+
+  p {
+    font-size: 1.6rem;
+    font-family: var(--font-inter);
+    color: var(--slate);
+    line-height: 2.6rem;
+  }
+}
+
+.about__recent-technologies {
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 1rem;
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: var(--font-fira-mono);
+    font-size: 1.3rem;
+    color: var(--slate);
+
+    svg {
+      width: 2rem;
+      height: auto;
+      color: var(--green);
+    }
+  }
+}
+
+.about__image {
+  width: 90%;
+  position: relative;
+  align-self: start;
+  border-radius: 0.6rem;
+
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+
+  @include mixins.respond(tablet) {
+    width: 50%;
+    justify-self: center;
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+  }
+
+  @include mixins.respond(tablet) {
+    width: 70%;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.6rem;
+    background-color: rgba(2, 97, 75, 0.5);
+    z-index: 5;
+    mix-blend-mode: screen;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &:hover::before {
+    opacity: 0;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 1.8rem;
+    left: 2rem;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.6rem;
+    border: 3px solid var(--green);
+    z-index: -1;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &:hover::after {
+    transform: translate(-5px, -5px);
+  }
+
+  img {
+    width: 100%;
+    border-radius: 0.6rem;
+    object-fit: cover;
+    transition: all 0.3s ease-in-out;
+    filter: hue-rotate(210deg) grayscale(100%);
+  }
+
+  &:hover img {
+    filter: none;
+  }
+}

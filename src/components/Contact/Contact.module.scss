@@ -1,0 +1,85 @@
+@use "../../styles/mixins.scss" as mixins;
+
+.contact {
+  padding: 7.5rem 18%;
+  margin-top: 4rem 0;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 6rem;
+  row-gap: 8rem;
+
+  @include mixins.respond(laptop) {
+    padding: 7.5rem 12%;
+  }
+
+  @include mixins.respond(tablet) {
+    grid-template-columns: 1fr;
+    padding: 7.5rem 14%;
+  }
+}
+
+.contact__heading {
+  width: 60%;
+
+  grid-column: 1 / -1;
+  grid-row: 1 / 2;
+
+  @include mixins.respond(tablet) {
+    width: 100%;
+  }
+}
+
+.contact__intro {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+}
+
+.contact__intro,
+.contact__description,
+.contact__description-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact__intro {
+  gap: 6rem;
+}
+
+.contact__description {
+  gap: 2rem;
+
+  h3 {
+    font-family: var(--font-fira-mono);
+    font-size: 1.6rem;
+    color: var(--green);
+  }
+
+  p {
+    font-family: var(--font-inter);
+    font-size: 1.6rem;
+    line-height: 2.8rem;
+    color: var(--light-slate);
+  }
+}
+
+.contact__description-text {
+  gap: 1.4rem;
+}
+
+.contact__copyright {
+  margin-top: 10rem;
+  padding-top: 4rem;
+  text-align: center;
+  border-top: 1px solid var(--light-navy);
+  color: var(--slate);
+  font-family: var(--font-fira-mono);
+  font-size: 1.2rem;
+
+  grid-column: 1 / -1;
+
+  span {
+    font-size: 1.4rem;
+  }
+}

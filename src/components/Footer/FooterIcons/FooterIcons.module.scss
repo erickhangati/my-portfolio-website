@@ -1,0 +1,34 @@
+@use "../../../styles/mixins.scss" as mixins;
+
+.footer-icons {
+  position: fixed;
+  bottom: 0;
+  left: 5%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+
+  @include mixins.respond(tablet-sm) {
+    display: none;
+  }
+}
+
+.footer-icons__icon {
+  width: 2.4rem;
+  height: auto;
+  color: var(--white);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    color: var(--green);
+  }
+}
+
+.footer-icons__hr {
+  width: 1px;
+  height: 9rem;
+  border-left: 1px solid var(--white);
+}

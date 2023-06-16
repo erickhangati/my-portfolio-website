@@ -1,0 +1,19 @@
+.icon-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+
+  a {
+    line-height: 1;
+  }
+}
+
+.icon-links__icon {
+  width: 2rem;
+  height: auto;
+  color: var(--slate);
+
+  &:hover {
+    color: var(--green);
+  }
+}

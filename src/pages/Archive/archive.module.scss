@@ -1,0 +1,138 @@
+@use "../../styles/mixins.scss" as mixins;
+
+.archive {
+  margin-top: 10rem;
+  padding: 7.5rem 12%;
+
+  @include mixins.respond(laptop) {
+    padding: 7.5rem 10%;
+  }
+
+  @include mixins.respond(tablet-sm) {
+    padding: 6rem 5%;
+  }
+}
+
+.archive__heading {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 0 2rem;
+
+  h1 {
+    font-size: 6.4rem;
+    font-weight: 700;
+    font-family: var(--font-inter);
+  }
+
+  h2 {
+    font-family: var(--font-fira-mono);
+    color: var(--green);
+    font-size: 1.6rem;
+  }
+}
+
+.archive__table {
+  margin-top: 10rem;
+  width: 100%;
+  text-align: left;
+
+  tr {
+    padding: 2rem;
+
+    display: grid;
+    grid-template-columns: 0.05fr 0.35fr 0.5fr 0.1fr;
+    align-items: center;
+    column-gap: 2rem;
+    row-gap: 1rem;
+
+    @include mixins.respond(tablet-sm) {
+      grid-template-columns: 0.05fr 1fr 0.06fr;
+    }
+
+    &.archive__project {
+      border-radius: 0.6rem;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        background-color: var(--light-navy);
+      }
+    }
+  }
+
+  th {
+    font-family: var(--font-inter);
+    font-weight: 700;
+    font-size: 1.6rem;
+    color: var(--slate);
+  }
+}
+
+.archive__table-built-with {
+  @include mixins.respond(tablet-sm) {
+    display: none;
+  }
+}
+
+.archive__project-year {
+  font-family: var(--font-fira-mono);
+  color: var(--green);
+  font-size: 1.6rem;
+}
+
+.archive__project-title {
+  font-family: var(--font-inter);
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: var(--lightest-slate);
+}
+
+.archive__project-technologies {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  @include mixins.respond(tablet-sm) {
+    display: none;
+  }
+}
+
+.technology {
+  display: flex;
+  align-items: center;
+  font-family: var(--font-fira-mono);
+  color: var(--slate);
+  font-size: 1.2rem;
+}
+
+.technology__separator {
+  margin: 0 0.5rem;
+  display: inline-block;
+  height: 13px;
+  line-height: 50%;
+
+  &.hide {
+    display: none;
+  }
+}
+
+.archive__project-links {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  @include mixins.respond(tablet-sm) {
+    justify-self: end;
+  }
+}
+
+.archive__project-link-icon {
+  width: 2rem;
+  height: auto;
+  color: var(--slate);
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    color: var(--green);
+  }
+}
